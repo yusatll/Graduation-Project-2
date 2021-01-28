@@ -46,35 +46,6 @@ class Tur_Sinifi:
         return self.kayitli_modeller
 
 
-class Tum_Turler_ve_Modeller:
-    def __init__(self):
-        self.turler = []
-        self.modeller = []
-
-    def tur_ekle(self, tur):
-        self.turler.append(tur)
-        self.modeller.append([tur])
-
-    def model_ekle(self, tur, model):
-        lower_list = [item.lower() for item in self.turler]
-        index = lower_list.index(tur.lower())
-        if index == -1:
-            self.turler.append(tur)
-            self.modeller.append([model])
-        else:
-            self.modeller[index].append(model)
-
-    def tur_getir(self):
-        return self.turler
-
-    def model_getir(self):
-        return self.modeller
-
-    def model_getir_turegore(self, tur):
-        lower_list = [item.lower() for item in self.turler]
-        index = lower_list.index(tur.lower())
-        return self.modeller[index]
-
 
 class MainWindow:
     def __init__(self, root):
