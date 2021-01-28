@@ -255,6 +255,7 @@ class food:
         else:
             vals.append(self.blue_values[kullanilan_feature[1]])
         vals = pd.DataFrame(vals).T
+        vals.fillna(method='ffill', axis=1, inplace=True)
         return vals
 
 # kaydet butonuna basınca modeli dosyaya kayıt et.
